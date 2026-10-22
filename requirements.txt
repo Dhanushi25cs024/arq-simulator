@@ -1,0 +1,11 @@
+# NetVista 3D — ARQ Protocol Simulator Dependencies
+# Student ID: 25CS024 | Subject: ITUC201 Fundamentals of Computer Networks
+
+matplotlib>=3.8.0
+pandas>=2.1.0
+streamlit>=1.30.0
+reportlab>=4.0.0
+python-docx>=1.1.0
+python-pptx>=0.6.23
+openpyxl>=3.1.2
+pypdf>=4.0.0

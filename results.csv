@@ -1,0 +1,5 @@
+experiment_id,protocol,window_size,total_frames,original_tx,retransmissions,total_tx,ack_count,timeout_count,events_processed,completion_time,delivered_in_order,delivered_count
+GBN_W3,GBN,3,10,10,6,16,14,2,39,36.8,True,10
+GBN_W5,GBN,5,10,10,5,15,13,1,33,23.4,True,10
+SR_W3,SR,3,10,10,2,12,10,2,32,27.4,True,10
+SR_W5,SR,5,10,10,2,12,10,2,31,19.0,True,10

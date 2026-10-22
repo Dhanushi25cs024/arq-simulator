@@ -1,0 +1,61 @@
+timestamp,protocol,window_size,event_type,frame_id,ack_id,description
+0.0,GBN,3,FRAME_TX,0,,"Sender transmitted Frame 0 (Attempt 1, Original)"
+1.0,GBN,3,FRAME_TX,1,,"Sender transmitted Frame 1 (Attempt 1, Original)"
+2.0,GBN,3,FRAME_TX,2,,"Sender transmitted Frame 2 (Attempt 1, Original)"
+2.5,GBN,3,FRAME_RCV_IN_ORDER,0,,Receiver accepted in-order Frame 0. Delivered to application. Next expected: 1
+2.5,GBN,3,ACK_TX_CUMULATIVE,,0,Receiver sent cumulative ACK 0
+3.5,GBN,3,FRAME_RCV_IN_ORDER,1,,Receiver accepted in-order Frame 1. Delivered to application. Next expected: 2
+3.5,GBN,3,ACK_TX_CUMULATIVE,,1,Receiver sent cumulative ACK 1
+4.2,GBN,3,ACK_RCV_CUMULATIVE,,0,Sender received cumulative ACK 0. Window base advanced from 0 to 1
+4.2,GBN,3,FRAME_TX,3,,"Sender transmitted Frame 3 (Attempt 1, Original)"
+4.5,GBN,3,FRAME_RCV_IN_ORDER,2,,Receiver accepted in-order Frame 2. Delivered to application. Next expected: 3
+4.5,GBN,3,ACK_TX_CUMULATIVE,,2,Receiver sent cumulative ACK 2
+5.2,GBN,3,ACK_RCV_CUMULATIVE,,1,Sender received cumulative ACK 1. Window base advanced from 1 to 2
+5.2,GBN,3,FRAME_TX_LOST,4,,"Sender transmitted Frame 4 (Attempt 1, Original) -> DROPPED by channel (deterministic loss)"
+6.2,GBN,3,ACK_RCV_CUMULATIVE,,2,Sender received cumulative ACK 2. Window base advanced from 2 to 3
+6.2,GBN,3,FRAME_TX,5,,"Sender transmitted Frame 5 (Attempt 1, Original)"
+6.7,GBN,3,FRAME_RCV_IN_ORDER,3,,Receiver accepted in-order Frame 3. Delivered to application. Next expected: 4
+6.7,GBN,3,ACK_TX_CUMULATIVE,,3,Receiver sent cumulative ACK 3
+8.4,GBN,3,ACK_RCV_CUMULATIVE,,3,Sender received cumulative ACK 3. Window base advanced from 3 to 4
+8.4,GBN,3,FRAME_TX,6,,"Sender transmitted Frame 6 (Attempt 1, Original)"
+8.7,GBN,3,FRAME_DISCARDED,5,,Receiver received out-of-order Frame 5. Discarded! Still expecting Frame 4
+8.7,GBN,3,ACK_TX_DUPLICATE,,3,Receiver re-sent duplicate cumulative ACK 3
+10.4,GBN,3,ACK_RCV_DUPLICATE,,3,Sender received duplicate cumulative ACK 3. Ignored.
+10.9,GBN,3,FRAME_DISCARDED,6,,Receiver received out-of-order Frame 6. Discarded! Still expecting Frame 4
+10.9,GBN,3,ACK_TX_DUPLICATE,,3,Receiver re-sent duplicate cumulative ACK 3
+12.6,GBN,3,ACK_RCV_DUPLICATE,,3,Sender received duplicate cumulative ACK 3. Ignored.
+14.4,GBN,3,TIMEOUT_EXPIRED,4,,TIMEOUT! Oldest unacknowledged Frame 4 expired. Retransmitting entire window [4..6]
+14.4,GBN,3,FRAME_RETRANS,4,,"Sender retransmitted Frame 4 (Attempt 2, Retransmission)"
+15.4,GBN,3,FRAME_RETRANS,5,,"Sender retransmitted Frame 5 (Attempt 2, Retransmission)"
+16.4,GBN,3,FRAME_RETRANS,6,,"Sender retransmitted Frame 6 (Attempt 2, Retransmission)"
+16.9,GBN,3,FRAME_RCV_IN_ORDER,4,,Receiver accepted in-order Frame 4. Delivered to application. Next expected: 5
+16.9,GBN,3,ACK_TX_CUMULATIVE,,4,Receiver sent cumulative ACK 4
+17.9,GBN,3,FRAME_RCV_IN_ORDER,5,,Receiver accepted in-order Frame 5. Delivered to application. Next expected: 6
+17.9,GBN,3,ACK_TX_CUMULATIVE,,5,Receiver sent cumulative ACK 5
+18.6,GBN,3,ACK_RCV_CUMULATIVE,,4,Sender received cumulative ACK 4. Window base advanced from 4 to 5
+18.6,GBN,3,FRAME_TX_LOST,7,,"Sender transmitted Frame 7 (Attempt 1, Original) -> DROPPED by channel (deterministic loss)"
+18.9,GBN,3,FRAME_RCV_IN_ORDER,6,,Receiver accepted in-order Frame 6. Delivered to application. Next expected: 7
+18.9,GBN,3,ACK_TX_CUMULATIVE,,6,Receiver sent cumulative ACK 6
+19.6,GBN,3,ACK_RCV_CUMULATIVE,,5,Sender received cumulative ACK 5. Window base advanced from 5 to 6
+19.6,GBN,3,FRAME_TX,8,,"Sender transmitted Frame 8 (Attempt 1, Original)"
+20.6,GBN,3,ACK_RCV_CUMULATIVE,,6,Sender received cumulative ACK 6. Window base advanced from 6 to 7
+20.6,GBN,3,FRAME_TX,9,,"Sender transmitted Frame 9 (Attempt 1, Original)"
+22.1,GBN,3,FRAME_DISCARDED,8,,Receiver received out-of-order Frame 8. Discarded! Still expecting Frame 7
+22.1,GBN,3,ACK_TX_DUPLICATE,,6,Receiver re-sent duplicate cumulative ACK 6
+23.1,GBN,3,FRAME_DISCARDED,9,,Receiver received out-of-order Frame 9. Discarded! Still expecting Frame 7
+23.1,GBN,3,ACK_TX_DUPLICATE,,6,Receiver re-sent duplicate cumulative ACK 6
+23.8,GBN,3,ACK_RCV_DUPLICATE,,6,Sender received duplicate cumulative ACK 6. Ignored.
+24.8,GBN,3,ACK_RCV_DUPLICATE,,6,Sender received duplicate cumulative ACK 6. Ignored.
+26.6,GBN,3,TIMEOUT_EXPIRED,7,,TIMEOUT! Oldest unacknowledged Frame 7 expired. Retransmitting entire window [7..9]
+26.6,GBN,3,FRAME_RETRANS,7,,"Sender retransmitted Frame 7 (Attempt 2, Retransmission)"
+27.6,GBN,3,FRAME_RETRANS,8,,"Sender retransmitted Frame 8 (Attempt 2, Retransmission)"
+28.6,GBN,3,FRAME_RETRANS,9,,"Sender retransmitted Frame 9 (Attempt 2, Retransmission)"
+29.1,GBN,3,FRAME_RCV_IN_ORDER,7,,Receiver accepted in-order Frame 7. Delivered to application. Next expected: 8
+29.1,GBN,3,ACK_TX_CUMULATIVE,,7,Receiver sent cumulative ACK 7
+30.1,GBN,3,FRAME_RCV_IN_ORDER,8,,Receiver accepted in-order Frame 8. Delivered to application. Next expected: 9
+30.1,GBN,3,ACK_TX_CUMULATIVE,,8,Receiver sent cumulative ACK 8
+30.8,GBN,3,ACK_RCV_CUMULATIVE,,7,Sender received cumulative ACK 7. Window base advanced from 7 to 8
+31.1,GBN,3,FRAME_RCV_IN_ORDER,9,,Receiver accepted in-order Frame 9. Delivered to application. Next expected: 10
+31.1,GBN,3,ACK_TX_CUMULATIVE,,9,Receiver sent cumulative ACK 9
+31.8,GBN,3,ACK_RCV_CUMULATIVE,,8,Sender received cumulative ACK 8. Window base advanced from 8 to 9
+32.8,GBN,3,ACK_RCV_CUMULATIVE,,9,Sender received cumulative ACK 9. Window base advanced from 9 to 10
